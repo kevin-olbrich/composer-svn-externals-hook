@@ -14,15 +14,7 @@
 
 3. Add an "[external.json](external.json.dist)" file to your external library root directory including the root-namespace of your lib. You can commit this file to your svn to use the external mechanism in a team.
 
-4. Now tell composer to download composer-svn-externals-hook by running the command:
-
-    ```bash
-    $ php composer.phar update
-    ```
-
-#### Post installation
-
-1. Enabling it in your root `composer.json` file.
+4. Enable this package in your root `composer.json` file.
 
     ```json
     "scripts": {
@@ -34,4 +26,24 @@
         "pre-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
         "post-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"]
     },
+    ```
+
+5. Now tell composer to download composer-svn-externals-hook by running the command:
+
+    ```bash
+    $ php composer.phar update
+    ```
+
+#### Adding a new svn external
+
+1. Just add a new svn:external to vendor/externals.
+
+2. "svn update" to receive the files.
+
+3. Add an "[external.json](external.json.dist)" file to your external library root directory as described above.
+
+2. Trigger the integration
+
+    ```bash
+    $ php composer.phar update
     ```
