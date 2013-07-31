@@ -1,0 +1,23 @@
+{
+    "name": "kevin-olbrich/composer-svn-externals-hook",
+    "description": "Hooks into Composer to include SVN Externals",
+    "type": "library",
+    "keywords": [
+        "externals",
+        "svn"
+    ],
+    "homepage": "http://kevin-olbrich.de",
+    "license": "",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "bin": [
+        "bin/add-externals.php",
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev",
+            "dev-develop": "1.1-dev"
+        }
+    }
+}
