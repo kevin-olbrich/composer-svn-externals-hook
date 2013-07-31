@@ -4,7 +4,8 @@
     "type": "library",
     "keywords": [
         "externals",
-        "svn"
+        "svn",
+		"composer"
     ],
     "homepage": "http://kevin-olbrich.de",
     "license": "",
