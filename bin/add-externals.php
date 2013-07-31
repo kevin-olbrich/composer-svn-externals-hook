@@ -6,8 +6,8 @@
  * Time: 13:45
  */
 
-$file = "../../../composer/autoload_namespaces.php";
-$backupfile = "../../../composer/autoload_namespaces.php.bak";
+$file = "vendor/composer/autoload_namespaces.php";
+$backupfile = "vendor/composer/autoload_namespaces.php.bak";
 
 if (!copy($file, $backupfile)) {
     echo "copy $file schlug fehl...\n";
@@ -20,7 +20,7 @@ $tmp_noWrite = false;
 
 $eofPattern = '/^\)\;/';
 
-$externals = scandir('../../../externals');
+$externals = scandir('vendor/externals');
 $externals_namespaces = array(array());
 $externals_namespaces_counter = 0;
 // $externals_namespaces[0]['path']
@@ -32,7 +32,7 @@ $externals_namespaces_counter = 0;
 foreach ($externals as $datei) { // Ausgabeschleife
     if (!($datei == '.' || $datei == '..' || $datei == '...' || $datei == '.svn')) {
         $path = "externals/" . $datei;
-        $filename = "../../../" . $path . "/external.json";
+        $filename = "vendor/" . $path . "/external.json";
         if (file_exists($filename)) {
             $json = file_get_contents($filename);
             $json = utf8_encode($json);
