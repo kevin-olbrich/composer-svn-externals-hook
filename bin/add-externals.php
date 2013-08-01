@@ -62,7 +62,7 @@ while (!feof($handle_open)) {
             $newRow = "    '" . $external['namespace'] . "\\\' => array(\$vendorDir . '/" . $external['path'] . "'),\r\n";
             fwrite($handle_write, $newRow);
         }
-		fwrite($handle_write, $row);
+        $tmp_noWrite = false;
     }
     if ($tmp_noWrite == false)
     {
