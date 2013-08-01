@@ -31,8 +31,8 @@ $externals_namespaces_counter = 0;
 
 foreach ($externals as $datei) { // Ausgabeschleife
     if (!($datei == '.' || $datei == '..' || $datei == '...' || $datei == '.svn')) {
-        $path = "externals/" . $datei;
-        $filename = dirname(__file__)."/../../../" . $path . "/external.json";
+        $path = "externals/";
+        $filename = dirname(__file__)."/../../../" . $path . $datei . "/external.json";
         if (file_exists($filename)) {
             $json = file_get_contents($filename);
             $json = utf8_encode($json);
