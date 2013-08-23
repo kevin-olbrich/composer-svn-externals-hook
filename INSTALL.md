@@ -5,6 +5,16 @@
 1. Add this project in your composer.json:
 
     ```json
+    "scripts": {
+        "post-install-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+        "post-update-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+        "post-package-install": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+        "post-package-update": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+        "post-package-uninstall": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+        "pre-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
+		"post-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"]
+    },
+    
     "require": {
         "kevin-olbrich/composer-svn-externals-hook": "1.0.*@dev"
     }
@@ -15,26 +25,6 @@
 3. Add an "[external.json](external.json.dist)" file to your external library root directory including the root-namespace of your lib. You can commit this file to your svn to use the external mechanism in a team.
 
 4. Now tell composer to download composer-svn-externals-hook by running the command:
-
-    ```bash
-    $ php composer.phar update
-    ```
-    
-5. Enable this package in your root `composer.json` file (doing this before composer.phar update would result in an error).
-
-    ```json
-    "scripts": {
-        "post-install-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "post-update-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "post-package-install": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "post-package-update": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "post-package-uninstall": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "pre-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
-        "post-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"]
-    },
-    ```
-    
-6. Trigger the integration:
 
     ```bash
     $ php composer.phar update
