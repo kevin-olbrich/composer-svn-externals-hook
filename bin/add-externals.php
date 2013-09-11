@@ -50,6 +50,8 @@ foreach ($externals as $datei) { // Ausgabeschleife
 while (!feof($handle_open)) {
     $row = fgets($handle_open);
 
+    if (empty($externals_namespaces)) { break; }
+
     foreach ($externals_namespaces as $external) {
         $tmp_regex = "/'".$external['namespace'].'\\\\\\\\\'/';
         if (preg_match($tmp_regex, $row)) {
