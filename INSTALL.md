@@ -6,13 +6,9 @@
 
     ```json
     "scripts": {
-        "post-install-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-        "post-update-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-        "post-package-install": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-        "post-package-update": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-        "post-package-uninstall": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-        "pre-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"],
-		"post-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php || exit 0"]
+        "post-install-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
+        "post-update-cmd": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"],
+		"post-autoload-dump": ["php vendor/kevin-olbrich/composer-svn-externals-hook/bin/add-externals.php"]
     },
     
     "require": {
